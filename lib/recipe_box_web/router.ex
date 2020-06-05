@@ -8,9 +8,15 @@ defmodule RecipeBoxWeb.Router do
   scope "/api/v1", RecipeBoxWeb do
     pipe_through :api
 
+    # Recipe
     post("/recipes", RecipeController, :create)
     get("/recipes", RecipeController, :index)
     get("/recipes/:id", RecipeController, :show)
+
+    # Meal
+    post("/meals", MealController, :create)
+
+    #
   end
 
   # Enables LiveDashboard only for development
