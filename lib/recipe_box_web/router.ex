@@ -5,8 +5,11 @@ defmodule RecipeBoxWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", RecipeBoxWeb do
+  scope "/api/v1", RecipeBoxWeb do
     pipe_through :api
+
+    post("/recipes", RecipeController, :create)
+    get("/recipes", RecipeController, :index)
   end
 
   # Enables LiveDashboard only for development
