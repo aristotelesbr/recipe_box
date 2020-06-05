@@ -10,6 +10,7 @@ defmodule RecipeBoxWeb.Router do
 
     post("/recipes", RecipeController, :create)
     get("/recipes", RecipeController, :index)
+    get("/recipes/:id", RecipeController, :show)
   end
 
   # Enables LiveDashboard only for development

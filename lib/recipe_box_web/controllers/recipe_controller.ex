@@ -24,4 +24,9 @@ defmodule RecipeBoxWeb.RecipeController do
         |> json(%{status: "unprocessable entity"})
     end
   end
+
+  def show(conn, %{"id" => id}) do
+    conn
+    |> render("show.json", %{recipe: Repo.get(Recipe, id)})
+  end
 end
