@@ -8,8 +8,8 @@ defmodule RecipeBox.CreateRecipe do
 
   def run(params) do
     %Recipe{}
-    |> cast(params, [:title, :description, :quantity_people, :meal_type, :difficulty_level])
-    |> validate_required([:title, :description])
-    |>Repo.insert()
+    |> cast(params, [:title, :description, :quantity_people, :difficulty_level, :meal_id])
+    |> validate_required([:title, :description, :meal_id])
+    |> Repo.insert()
   end
 end

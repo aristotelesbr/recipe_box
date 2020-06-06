@@ -9,7 +9,6 @@ defmodule RecipeBoxWeb.MealController do
         conn
         |> put_status(201)
         |> render("show.json", %{meal: meal})
-
       {:error, _} ->
         conn
         |> put_status(422)

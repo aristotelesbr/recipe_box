@@ -7,6 +7,15 @@ defmodule RecipeBoxWeb.ErrorView do
   #   %{errors: %{detail: "Internal Server Error"}}
   # end
 
+  def render("422.json", %{errors: errors}) do
+    %{error: render_errors(errors)}
+  end
+
+  defp render_errors(errors) do
+    require IEx; IEx.pry
+    Enum.map(errors, fn {field, {message, _meta}} -> %{field: field, message: message} end)
+  end
+
   # By default, Phoenix returns the status message from
   # the template name. For example, "404.json" becomes
   # "Not Found".

@@ -2,7 +2,7 @@ defmodule RecipeBox.Recipe do
   @moduledoc """
     Recipe schema
   """
-  alias RecipeBox.DifficultyLevelEnum
+  alias RecipeBox.{DifficultyLevelEnum, Meal}
 
   use Ecto.Schema
 
@@ -10,8 +10,8 @@ defmodule RecipeBox.Recipe do
     field :title, :string
     field :description, :string
     field :difficulty_level, DifficultyLevelEnum
-    field :meal_type, :integer
     field :quantity_people, :string
+    belongs_to :meal, Meal
 
     timestamps()
   end
