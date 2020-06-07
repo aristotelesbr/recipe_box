@@ -15,8 +15,6 @@ defmodule RecipeBoxWeb.RecipeController do
   def create(conn, params) do
     case CreateRecipe.run(params) do
       {:ok, recipe} ->
-        recipe = recipe |> Repo.preload(:meal)
-
         conn
         |> put_status(201)
         |> render("show.json", %{recipe: recipe})
