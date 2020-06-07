@@ -1,4 +1,7 @@
 defmodule RecipeBox.CreateMeal do
+  @moduledoc """
+    Create meal
+  """
   import Ecto.Changeset
 
   alias RecipeBox.{Meal, Repo}

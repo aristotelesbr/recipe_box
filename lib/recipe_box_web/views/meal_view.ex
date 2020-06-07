@@ -1,6 +1,8 @@
 defmodule RecipeBoxWeb.MealView do
   use RecipeBoxWeb, :view
 
+  alias RecipeBoxWeb.MealView
+
   def render("meal.json", %{meal: meal}) do
     %{
       id: meal.id,
@@ -12,13 +14,13 @@ defmodule RecipeBoxWeb.MealView do
 
   def render("index.json", %{meals: meals}) do
     %{
-      data: render_many(meals, RecipeBoxWeb.MealView, "meal.json")
+      data: render_many(meals, MealView, "meal.json")
     }
   end
 
   def render("show.json", %{meal: meal}) do
     %{
-      data: render_one(meal, RecipeBoxWeb.MealView, "meal.json")
+      data: render_one(meal, MealView, "meal.json")
     }
   end
 end

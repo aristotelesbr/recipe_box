@@ -15,8 +15,6 @@ defmodule RecipeBoxWeb.Router do
 
     # Meal
     post("/meals", MealController, :create)
-
-    #
   end
 
   # Enables LiveDashboard only for development

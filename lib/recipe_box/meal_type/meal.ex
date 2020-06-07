@@ -1,7 +1,8 @@
 defmodule RecipeBox.Meal do
+  @moduledoc """
+    Meal schema
+  """
   use Ecto.Schema
-
-  alias RecipeBox.Recipe
 
   schema "meals" do
     field :active, :boolean, default: true

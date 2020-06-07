@@ -1,8 +1,6 @@
 defmodule RecipeBoxWeb.RecipeView do
   use RecipeBoxWeb, :view
 
-  alias RecipeBox.{Meal, Recipe, Repo}
-
   def render("recipe.json", %{recipe: recipe}) do
     %{
       id: recipe.id,

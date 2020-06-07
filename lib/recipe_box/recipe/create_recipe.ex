@@ -6,6 +6,7 @@ defmodule RecipeBox.CreateRecipe do
 
   alias RecipeBox.{Recipe, Repo}
 
+  @doc false
   def run(params) do
     %Recipe{}
     |> cast(params, [:title, :description, :quantity_people, :difficulty_level, :meal_id])

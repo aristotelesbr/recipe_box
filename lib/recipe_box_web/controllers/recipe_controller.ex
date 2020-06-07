@@ -2,7 +2,7 @@ defmodule RecipeBoxWeb.RecipeController do
   use RecipeBoxWeb, :controller
 
   alias RecipeBox.{CreateRecipe, Repo, Recipe}
-  alias RecipeBoxWeb.ErrorView
+  alias RecipeBoxWeb.ChangesetView
 
   def index(conn, _params) do
     recipes = Repo.all(Recipe) |> Repo.preload(:meal)
@@ -16,14 +16,15 @@ defmodule RecipeBoxWeb.RecipeController do
     case CreateRecipe.run(params) do
       {:ok, recipe} ->
         recipe = recipe |> Repo.preload(:meal)
+
         conn
         |> put_status(201)
         |> render("show.json", %{recipe: recipe})
 
-      {:error, %{errors: errors}} ->
+      {:error, changeset} ->
         conn
         |> put_status(422)
-        |> render(ErrorView, "422.json", %{errors: errors})
+        |> render(ChangesetView, "422.json", %{changeset: changeset})
     end
   end
 

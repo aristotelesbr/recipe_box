@@ -2,6 +2,7 @@ defmodule RecipeBoxWeb.MealController do
   use RecipeBoxWeb, :controller
 
   alias RecipeBox.{CreateMeal}
+  alias RecipeBoxWeb.ChangesetView
 
   def create(conn, params) do
     case CreateMeal.run(params) do
@@ -9,10 +10,11 @@ defmodule RecipeBoxWeb.MealController do
         conn
         |> put_status(201)
         |> render("show.json", %{meal: meal})
-      {:error, _} ->
+
+      {:error, changeset} ->
         conn
         |> put_status(422)
-        |> json(%{status: "unprocessable entity"})
+        |> render(ChangesetView, "422.json", %{changeset: changeset})
     end
   end
 end
