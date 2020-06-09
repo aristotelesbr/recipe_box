@@ -5,4 +5,5 @@ defmodule RecipeBoxWeb.Graphql.Schema.Types do
 
   import_types(Schema.RecipeType)
   import_types(Schema.MealType)
+  import_types(Schema.IngredientType)
 end

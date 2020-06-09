@@ -3,6 +3,13 @@ defmodule RecipeBox.Recipe do
     Recipe schema
   """
   alias RecipeBox.{DifficultyLevelEnum, Meal, Ingredient}
+  alias RecipeBox.Repo
+
+  def data(), do: Dataloader.Ecto.new(Repo, query: &query/2)
+
+  def query(queryable, _params) do
+    queryable
+  end
 
   use Ecto.Schema
 

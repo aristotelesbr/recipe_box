@@ -1,8 +1,8 @@
 defmodule RecipeBoxWeb.IngredientControllerTest do
   use RecipeBoxWeb.ConnCase
 
-  alias RecipeBox.Ingredients
-  alias RecipeBox.Ingredients.Ingredient
+  alias RecipeBox.Ingredient
+  alias RecipeBox.Ingredient.Ingredient
 
   @create_attrs %{
     name: "some name",
@@ -15,7 +15,7 @@ defmodule RecipeBoxWeb.IngredientControllerTest do
   @invalid_attrs %{name: nil, price: nil}
 
   def fixture(:ingredient) do
-    {:ok, ingredient} = Ingredients.create_ingredient(@create_attrs)
+    {:ok, ingredient} = Ingredient.create_ingredient(@create_attrs)
     ingredient
   end
 
