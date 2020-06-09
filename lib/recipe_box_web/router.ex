@@ -34,5 +34,8 @@ defmodule RecipeBoxWeb.Router do
       pipe_through [:fetch_session, :protect_from_forgery]
       live_dashboard "/dashboard", metrics: RecipeBoxWeb.Telemetry
     end
+
+    forward("/graphql", Absinthe.Plug, schema: RecipeBoxWeb.Schem)
+    forward("/graphiql", Absinthe.Plug.GraphiQL, schema: RecipeBoxWeb.Schema)
   end
 end

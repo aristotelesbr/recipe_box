@@ -1,5 +1,5 @@
 defmodule RecipeBoxWeb.ErrorView do
-  use RecipeBoxWeb, :view
+  # use RecipeBoxWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.
