@@ -1,13 +1,13 @@
 defmodule RecipeBoxWeb.Schema do
   use Absinthe.Schema
 
-  alias RecipeBox.{Recipe, Ingredient}
+  alias RecipeBox.{Recipe, IngredientRepo}
   alias RecipeBoxWeb.Graphql.Resolvers
 
   def context(ctx) do
     loader =
-      Dataloader.new
-      |> Dataloader.add_source(Ingredient, Ingredient.data())
+      Dataloader.new(timeout: 36_000_00)
+      |> Dataloader.add_source(IngredientRepo, IngredientRepo.data())
       |> Dataloader.add_source(Recipe, Recipe.data())
 
     Map.put(ctx, :loader, loader)
