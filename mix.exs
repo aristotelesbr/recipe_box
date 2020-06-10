@@ -20,7 +20,7 @@ defmodule RecipeBox.MixProject do
   def application do
     [
       mod: {RecipeBox.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :elastic]
     ]
   end
 
@@ -46,7 +46,8 @@ defmodule RecipeBox.MixProject do
       {:ecto_enum, "~> 1.4"},
       {:absinthe, "~> 1.5"},
       {:absinthe_plug, "~> 1.5"},
-      {:dataloader, "~> 1.0.0"}
+      {:dataloader, "~> 1.0.0"},
+      {:elastic, "~> 3.0"}
     ]
   end
 
