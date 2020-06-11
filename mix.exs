@@ -20,7 +20,7 @@ defmodule RecipeBox.MixProject do
   def application do
     [
       mod: {RecipeBox.Application, []},
-      extra_applications: [:logger, :runtime_tools, :elastic]
+      extra_applications: [:logger, :runtime_tools, :elastic, :cachex]
     ]
   end
 
@@ -47,7 +47,8 @@ defmodule RecipeBox.MixProject do
       {:absinthe, "~> 1.5"},
       {:absinthe_plug, "~> 1.5"},
       {:dataloader, "~> 1.0.0"},
-      {:elastic, "~> 3.0"}
+      {:elastic, "~> 3.0"},
+      {:cachex, "~> 3.2"}
     ]
   end
 

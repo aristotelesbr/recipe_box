@@ -14,9 +14,10 @@ defmodule RecipeBox.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: RecipeBox.PubSub},
       # Start the Endpoint (http/https)
-      RecipeBoxWeb.Endpoint
+      RecipeBoxWeb.Endpoint,
       # Start a worker by calling: RecipeBox.Worker.start_link(arg)
       # {RecipeBox.Worker, arg}
+      RecipeBox.Cachex.start()
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
