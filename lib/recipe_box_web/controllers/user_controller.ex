@@ -20,7 +20,7 @@ defmodule RecipeBoxWeb.UserController do
 
       {:error, changeset} ->
         conn
-        |> put_status(221)
+        |> put_status(422)
         |> render(ChangesetView, "422.json", changeset: changeset)
     end
   end

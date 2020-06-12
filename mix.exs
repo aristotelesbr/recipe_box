@@ -48,7 +48,8 @@ defmodule RecipeBox.MixProject do
       {:absinthe_plug, "~> 1.5"},
       {:dataloader, "~> 1.0.0"},
       {:elastic, "~> 3.0"},
-      {:cachex, "~> 3.2"}
+      {:cachex, "~> 3.2"},
+      {:bcrypt_elixir, "~> 2.0"},
     ]
   end
 
