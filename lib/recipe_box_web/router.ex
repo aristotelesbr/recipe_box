@@ -18,6 +18,9 @@ defmodule RecipeBoxWeb.Router do
 
     # Ingredient
     post("/ingredients", IngredientController, :create)
+
+    # Users
+    post("/users", UserController, :create)
   end
 
   # Enables LiveDashboard only for development
