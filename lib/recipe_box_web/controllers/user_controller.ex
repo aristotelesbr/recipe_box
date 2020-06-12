@@ -1,8 +1,7 @@
 defmodule RecipeBoxWeb.UserController do
   use RecipeBoxWeb, :controller
 
-  alias RecipeBox.Accounts
-  alias RecipeBox.CreateUser
+  alias RecipeBox.{Accounts, CreateUser}
   alias RecipeBoxWeb.ChangesetView
 
   action_fallback RecipeBoxWeb.FallbackController

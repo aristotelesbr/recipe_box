@@ -1,8 +1,7 @@
 defmodule RecipeBoxWeb.UserControllerTest do
   use RecipeBoxWeb.ConnCase
 
-  alias RecipeBox.Accounts
-  alias RecipeBox.Accounts.User
+  alias RecipeBox.User
 
   @create_attrs %{
     email: "some email",
